@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/compara-preco/cervantagem/styles.css" />
+    <title>Comparador</title>
+  </head>
+
+  <body>
+    <h1>Cerva<span>ntagem</span></h1>
+    <script>
+      var mlA = prompt('Digite os mililitros(ml) da PRIMEIRA bebida')
+      var precoA = prompt('Digite o preço da PRIMEIRA bebida')
+      var mlB = prompt('Digite os mililitros(ml) da segunda bebida')
+
+      function comparador(mlA, precoA, mlB) {
+        let precoB = (mlB * precoA) / mlA
+        let precoLitro = (1000 * precoA) / mlA
+        let precos = {
+          precoB: precoB,
+          precoLitro: precoLitro
+        }
+        return precos
+      }
+      let resultado = comparador(mlA, precoA, mlB)
+
+      document.write(
+        `Com a cerva de ${mlA} ml custando R$ ${precoA}, a de ${mlB} ml deveria custar R$ ${resultado.precoB.toFixed(
+          2
+        )}
+      e o preço do litro fica por R$ ${resultado.precoLitro.toFixed(2)}`
+      )
+    </script>
+  </body>
+</html>
