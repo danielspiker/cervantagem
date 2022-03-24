@@ -28,5 +28,23 @@
 
       <p>Pra ser vantagem, a outra deve custar menos que:</p>
       <div id="result"></div>
+    
+      <script>
+        var form1 = document.querySelector('#campo1')
+var form2 = document.querySelector('#campo2')
+var form3 = document.querySelector('#campo3')
+
+var botao1 = document.querySelector('#botao')
+
+botao1.addEventListener('click', function (e) {
+  var mlA1 = Number(form1.value)
+  var precoA1 = Number(form2.value)
+  var mlB1 = Number(form3.value)
+
+  let precoB = (mlB1 * precoA1) / mlA1
+  result.innerText = `R$ ${precoB.toFixed(2)}`
+  e.preventDefault()
+})
+    </script>
   </body>
 </html>
